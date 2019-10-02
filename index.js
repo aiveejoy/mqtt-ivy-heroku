@@ -1,15 +1,15 @@
 var app = require('express')();
-var express= require('express');
-var http = require('http').Server(app);
-
+var express = require('express');
+var http = require('http').createServer(app);
 var port = process.env.PORT || 3000;
 
-app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
-});
+ });
+
+app.use(express.static('public'));
 
 http.listen(port, function(){
-  console.log('listening on *:' + port);
+  console.log('listening on *: ' + port);
 });
