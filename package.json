@@ -18,5 +18,8 @@
   "homepage": "https://github.com/aiveejoy/mqtt-ivy-heroku#readme",
   "engines": {
     "node": "10.15"
+  },
+  "dependencies": {
+    "node": "^12.11.0"
   }
 }
