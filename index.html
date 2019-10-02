@@ -1,0 +1,111 @@
+<html>
+
+<head>
+  <title>subscribe</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <center>
+    <h1>MQTT</h1>
+    <p>My MQTT Web App</p>
+  </center>
+  <br><br>
+  <div class="container-fluid">
+    <div class="row">
+      <br>
+      <div class="col-sm-4 bg-info">
+        <div><br><br>
+          <center><b>BROKER</b></center>
+        </div><br>
+        <div class="form-group">
+          <label>Address:</label>
+          <input type="text" class="form-control" id="address" value="wss://test.mosquitto.org:8081/mqtt">
+        </div>
+        <center>
+          <button class="btn btn-success connect" tpye="button">Connect</button>
+          <button class="btn btn-danger disconnect" tpye="button">Disconnect</button>
+        </center>
+        <br><br>
+        <div>
+          STATUS<br>
+          <input type="text" class="form-control" id="status">
+        </div>
+        <br><br>
+      </div>
+      <div class="col-sm-4 bg-success">
+        <br><br>
+        <div>
+          <center><b>PUBLISH</b></center>
+        </div><br>
+        <div class="form-group">
+          <label>Topic:</label>
+          <input type="text" class="form-control" id="ptopic">
+        </div>
+        <div class="form-group">
+          <label>Payload:</label>
+          <input type="text" class="form-control" id="pload">
+        </div>
+        <center>
+          <button class="btn btn-success publish" type="button">Publish</button>
+        </center>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Payload</th>
+              <th>Time stamp</th>
+            </tr>
+          </thead>
+          <tbody id="tbody2">
+          </tbody>
+        </table>
+        <br><br>
+      </div>
+      <div class="col-sm-4 bg-warning">
+        <br><br>
+        <div>
+          <center><b>SUBSCRIBE</b></center>
+        </div><br>
+        <div class="form-group">
+          <label>Topic:</label>
+          <input type="text" class="form-control" id="stopic">
+        </div>
+        <center>
+          <button class="btn btn-success subscribe" tpye="button">Subscribe</button>
+          <button class="btn btn-danger unsubscribe" tpye="button" >Unsubscribe</button>
+        </center>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Time stamp</th>
+            </tr>
+          </thead>
+          <tbody id="tbody3">
+          </tbody>
+        </table>
+        <br><br>
+      </div>
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Topic</th>
+        <th>Payload</th>
+        <th>Time stamp</th>
+      </tr>
+    </thead>
+    <tbody id="tbody1">
+    </tbody>
+  </table>
+</body>
+<script src="scripts/browserMqtt.js"></script>
+<script src="scripts/controller.js"></script>
+
+</html>
